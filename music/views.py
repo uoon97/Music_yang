@@ -43,7 +43,7 @@ def search_basic(request):
     if 'q' in request.GET:
         q = request.GET['q']
         message = 'You searched for: %r' % request.GET['q']
-        musics = Music.objects.filter(music_name__icontains=q)
+        musics = Music.objects.filter(music_price__icontains=q)
 
     else:
         message = 'You submitted an empty form'
